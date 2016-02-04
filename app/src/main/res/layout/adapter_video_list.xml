@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dip"
+    android:background="@drawable/selector_video_list">
+    <ImageView
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:background="@mipmap/video_default_icon"/>
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="60dip"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"
+            android:text="标题"
+            android:singleLine="true"
+            />
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="05:10"
+            android:textColor="@color/gray_white"
+            android:textSize="15sp"
+            android:layout_marginTop="2dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="50M"
+        android:textColor="@color/gray_white"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"/>
+
+</LinearLayout>
