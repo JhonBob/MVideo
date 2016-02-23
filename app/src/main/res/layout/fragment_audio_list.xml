@@ -3,13 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="30sp"
-        android:text="音乐"
-        android:textColor="@android:color/holo_red_light"
-        android:gravity="center"
-        />
+        android:id="@+id/listView"
+        android:divider="@color/gray_white"
+        android:listSelector="@android:color/transparent"
+        android:dividerHeight="0.1dp">
+    </ListView>
 
 </LinearLayout>
