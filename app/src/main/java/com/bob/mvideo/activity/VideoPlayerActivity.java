@@ -184,6 +184,15 @@ public class VideoPlayerActivity extends BaseActivity {
             }
         });
 
+        videoView.setOnBufferingUpdateListener(new MediaPlayer.OnBufferingUpdateListener() {
+            @Override
+            public void onBufferingUpdate(MediaPlayer mp, int percent) {
+                float floatPercent=percent/100f;
+                float bufferProgress=floatPercent*videoView.getDuration();
+                play_seekbar.setSecondaryProgress((int) bufferProgress);
+            }
+        });
+
     }
 
     @Override
@@ -214,6 +223,8 @@ public class VideoPlayerActivity extends BaseActivity {
                 updatePlayProgress();
             }
         });
+
+
 
         registerBatteryBroadcastReceiver();
         updateSystemTime();

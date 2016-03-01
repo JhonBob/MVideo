@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bob.mvideo.R;
 import com.bob.mvideo.adapter.MainPagerAdapter;
 import com.bob.mvideo.fragment.AudioListFragment;
+import com.bob.mvideo.fragment.NetVideoFragment;
 import com.bob.mvideo.fragment.VideoListFragment;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 
@@ -19,6 +20,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     private TextView tab_video;
     private TextView tab_audio;
+    private TextView tab_net_video;
     private View indicate_line;
     private ViewPager viewPager;
 
@@ -38,12 +40,14 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         tab_video=(TextView)findViewById(R.id.tab_video);
         tab_audio=(TextView)findViewById(R.id.tab_audio);
         indicate_line=findViewById(R.id.indicate_line);
+        tab_net_video=(TextView)findViewById(R.id.tab_net_video);
         viewPager=(ViewPager)findViewById(R.id.viewPager);
     }
 
     public void initListener(){
         tab_video.setOnClickListener(this);
         tab_audio.setOnClickListener(this);
+        tab_net_video.setOnClickListener(this);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -74,6 +78,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public void initData(){
         fragments.add(new VideoListFragment());
         fragments.add(new AudioListFragment());
+        fragments.add(new NetVideoFragment());
         caculateIndicateLineWidth();
         adapter=new MainPagerAdapter(getSupportFragmentManager(),fragments);
         viewPager.setAdapter(adapter);
@@ -90,6 +95,9 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 break;
             case R.id.tab_audio:
                 viewPager.setCurrentItem(1);
+                break;
+            case R.id.tab_net_video:
+                viewPager.setCurrentItem(2);
                 break;
             default:
                 break;

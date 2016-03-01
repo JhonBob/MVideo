@@ -29,6 +29,7 @@
             android:progressDrawable="@drawable/video_progress_drawable"
             android:maxHeight="10dp"
             android:minHeight="10dp"
+            android:secondaryProgress="60"
             android:thumb="@mipmap/progress_thumb"
             android:progress="50"/>
         <TextView

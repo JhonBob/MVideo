@@ -447,6 +447,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
 //        }
 //    };
     MediaPlayer.OnBufferingUpdateListener mBufferingUpdateListener;
+
     public void setOnBufferingUpdateListener(MediaPlayer.OnBufferingUpdateListener mBufferingUpdateListener){
     	this.mBufferingUpdateListener = mBufferingUpdateListener;
     }
